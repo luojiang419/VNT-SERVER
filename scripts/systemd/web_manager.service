@@ -1,0 +1,14 @@
+[Unit]
+Description=VNT Web Management Panel
+After=network.target
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/opt/ee2x/vnts
+ExecStart=/usr/bin/python3 /opt/ee2x/vnts/web_server.py --port 8888 --backend-port 29870
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

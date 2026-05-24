@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  vnts-server:
+    build: .
+    container_name: vnts-server
+    ports:
+      - "8888:8888"   # Web管理界面
+      - "1666:1666"   # vnts服务端口
+      - "29870:29870" # vnts Web UI
+    volumes:
+      - ./server_config.json:/app/server_config.json
+      - ./vnts.log:/app/vnts.log
+    restart: unless-stopped
+    environment:
+      - TZ=Asia/Shanghai

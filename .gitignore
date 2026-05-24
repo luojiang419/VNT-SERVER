@@ -1,0 +1,33 @@
+target/*
+src/proto/*
+src/generated_serial_number.rs
+key/*
+log/*
+.vscode/*
+
+# 二进制文件
+vnts
+vnts.exe
+*.exe
+
+# 日志
+deploy.log
+
+# 打包产物
+vnts-server-docker-image.tar
+vnts-src.zip
+output/
+
+# 用户配置
+%USERPROFILE%.cargoconfig.toml
+
+# 进度文件
+进度文件/
+
+# 旧版本/重复源码
+vnts-2.0.0/
+
+# 构建配置
+web_server.spec
+VntService.spec
+VntService_Setup.iss

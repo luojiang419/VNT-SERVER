@@ -1,0 +1,14 @@
+[Unit]
+Description=VNT Virtual Network Service
+After=network.target
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/opt/ee2x/vnts
+ExecStart=/opt/ee2x/vnts/vnts --port 1666 --gateway 192.168.188.1 --netmask 255.255.255.0 --web-port 29870 --username admin --password password
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
